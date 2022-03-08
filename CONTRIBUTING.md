@@ -1,8 +1,11 @@
 # Metodología organizacional SoftSCRUM:
 EL workflow base es **feature-branching**
+
+---
 ## Pull Requests:
 - Todo merge a *main* debe de hacerse mediante *pull request*.
 - Opcionalmente se pueden crear *pull requests* para *feature branches* que contengan *sub-features* en las que trabajen varias personas.
+
 ### Nomenclatura:
 - Se requiere que **todos** los integrantes del grupo revisen y acepten el *pull request* para realizar el *merge*: <br>
   - `MAJOR -> <Pull Request Name>` <br>
@@ -13,12 +16,15 @@ EL workflow base es **feature-branching**
 - Se requiere que **solo** los integrantes citados **en el comentario y título** revisen y acepten el *pull request* para realizar el *merge*.
   - `<member name> -> <Pull Request Name>` <br>
     `@member1 @member2 @member3 ...` <br>
-## Aprobación de Pull Requests
+    
+### Aprobación de Pull Requests
 - Síncrono:
   - Reunión de las personas implicadas para aprobar el pull request.
 - Asíncrono:
   - Se revisa de manera individual y se comenta si se aprueba o no el request.
   - Cuando la decisión no sea unánime se discute con el resto de implicados si se aprueba o no.
+
+---
 ## Sprints
 ### Sprint Reviews
 1. Elección de Sprint master mediante sortea2.
@@ -46,6 +52,8 @@ EL workflow base es **feature-branching**
   - Nada grave:
     1. Se notifica por el canal general de Discord o Whatsapp (opcional).
     2. Se discute en el próximo SCRUM preferiblemente.
+
+---
 ### SCRUMs
 1. Realización individual de actas de SCRUM.
 2. Realización de SCRUM:
