@@ -5,13 +5,13 @@ EL workflow base es **feature-branching**
 - Opcionalmente se pueden crear *pull requests* para *feature branches* que contengan *sub-features* en las que trabajen varias personas.
 ### Nomenclatura:
 - Se requiere que **todos** los integrantes del grupo revisen y acepten el *pull request* para realizar el *merge*: <br>
-  - `MAJOR <Pull Request Name>` <br>
+  - `MAJOR -> <Pull Request Name>` <br>
     `@member1 @member2 @member3 ...` <br>
 - Se requiere que **alguno** los integrantes citados **en el comentario** revise y acepte el *pull request* para realizar el *merge*.
-  - `MINOR <Pull Request Name>` <br>
+  - `MINOR -> <Pull Request Name>` <br>
     `@member1 @member2 @member3 ...` <br>
 - Se requiere que **solo** los integrantes citados **en el comentario y título** revisen y acepten el *pull request* para realizar el *merge*.
-  - `<member name> <Pull Request Name>` <br>
+  - `<member name> -> <Pull Request Name>` <br>
     `@member1 @member2 @member3 ...` <br>
 ## Aprobación de Pull Requests
 - Síncrono:
