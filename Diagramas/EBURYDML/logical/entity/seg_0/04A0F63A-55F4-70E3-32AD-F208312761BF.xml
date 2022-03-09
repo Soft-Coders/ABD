@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="04A0F63A-55F4-70E3-32AD-F208312761BF" name="SEGREGADA">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:07:24 UTC</createdTime>
+<ownerDesignName>EBURYDML</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>9862E821-1FF2-E03B-8DF9-CEB8FFF9A3B3</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="COMISION" id="6B12E90E-579C-548E-9010-9F00F4EC42A5">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:58:22 UTC</createdTime>
+<ownerDesignName>EBURYDML</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

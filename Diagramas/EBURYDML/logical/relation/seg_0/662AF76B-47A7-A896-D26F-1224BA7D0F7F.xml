@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Destino" directorySegmentName="seg_0" id="662AF76B-47A7-A896-D26F-1224BA7D0F7F">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:13:29 UTC</createdTime>
+<ownerDesignName>EBURYDML</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E6088E7B-BBDB-60AF-F34B-2CDB86C58884</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>0444213D-3F07-B760-EDF5-C405FFA690A2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
