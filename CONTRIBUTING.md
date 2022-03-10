@@ -1,5 +1,5 @@
 # Metodología organizacional SoftSCRUM:
-El workflow base es **gitflow**, modificando la rama "develop" por la rama "entrega-x" 
+El workflow base es **gitflow**, modificando la rama "develop" por la rama "entrega-x".
 ![diagrama gitflow](./images/gitflow.png)
 
 ---
