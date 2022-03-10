@@ -1,6 +1,6 @@
 # Metodología organizacional SoftSCRUM:
-EL workflow base es **feature-branching**
-![diagrama feature branching](./images/feature-branching.png)
+EL workflow base es **gitflow**
+![diagrama gitflow](./images/gitflow.png)
 
 ---
 ## Pull Requests:
