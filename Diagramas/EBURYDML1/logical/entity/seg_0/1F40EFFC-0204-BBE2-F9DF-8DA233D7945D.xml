@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1F40EFFC-0204-BBE2-F9DF-8DA233D7945D" name="TARJETAS">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:08:27 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="NUMERO" id="F41B5264-0EC7-7937-5957-A13071135A7C">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:36:36 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOMBRE_TITULAR" id="E230A991-3C98-789A-0A57-13468D918363">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:36:41 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CVV" id="F97ED0FF-DE27-B417-D9F4-D23197EAC10F">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:36:50 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MARCA" id="1D198C73-F6F2-7502-5B53-DEC85EBA174C">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:41:26 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA_CAD" id="409C6BAB-64ED-C5B2-A7CC-1B9B916988CB">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:51:51 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID" id="A7D4FCE3-9E53-3F80-575E-D7E2161B1BD5">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:54:57 UTC</createdTime>
+<generatorID>D21BE27B-49B0-B078-BEB7-2D07C496B775</generatorID>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<referedAttribute>02935264-7477-906E-9549-2E6C1B001BE9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C212CEB2-F23E-574C-66D4-47965F5C0DBC" name="TARJETAS PK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:41:41 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F41B5264-0EC7-7937-5957-A13071135A7C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
