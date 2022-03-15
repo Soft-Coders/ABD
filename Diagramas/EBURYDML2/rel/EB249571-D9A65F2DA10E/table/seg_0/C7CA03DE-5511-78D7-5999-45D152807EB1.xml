@@ -1,0 +1,151 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C7CA03DE-5511-78D7-5999-45D152807EB1" name="CUENTA_REFERENCIA">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>BD6193D5-E1F9-27B0-3A8D-704043D71969</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CUENTA_CUENTA_ID" id="0F74CCF6-E076-682A-C3DB-BF26BA2B1199">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="832F5279-E844-CF84-A194-3F98CC46F568" referredColumn="6F364D8A-E10F-D7C5-A8DF-B9D5F5BD4FF5"/>
+</associations>
+</Column>
+<Column name="NOMBRE_BANCO" id="625DAA05-2749-7875-DF47-84B9B257FD21">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>B1CF95AA-CE46-B4A6-9080-C9E7345613B4</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SUCURSAL" id="2C1504EC-5AA8-1B23-D10C-D500F9B1D69B">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>5E5CA47A-8174-F758-2828-6B7F07C5E7EF</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PAIS" id="C2EF3F0C-2A56-1825-D7BA-AA820203CE9D">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>1A3D4A34-4BBC-278D-87E0-11B2E089BA38</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SALDO" id="6CF8B470-1299-628C-8DE5-30678C9BFC88">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>ED48B787-B6E5-1F84-0942-DDDC936A8A38</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_APERTURA" id="C7C864EF-B9B2-546C-EA08-F510EE6422F8">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>D128B844-7121-6C1C-06C9-269804441459</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTADO" id="B7009B37-7C21-C7F3-02C6-BED6260401E7">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>488CADF0-1949-E380-D603-67CBEE2DC7A4</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DIVISA_ABREVIATURA" id="599319C8-D35C-B128-31DD-D70F91E84164">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>819F03BE-BDD5-E76D-40C1-CDFC92A60FA9</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="49F013D0-EF24-A3E3-9DFA-34FC349A5ABE" referredColumn="EE369F81-2ACF-EDE1-44EA-C1CDC5E1C67E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="05FF9D0B-3449-E4D5-3018-E50BC747CD23" name="CUENTA_REFERENCIA_PK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="0F74CCF6-E076-682A-C3DB-BF26BA2B1199"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2474584C-22D2-CA04-F60C-F0E5F0F581E7" name="CUENTA_REFERENCIA_CUENTA_FK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>730C76F7-5357-DD97-EF7B-EACA20645DFD</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0F74CCF6-E076-682A-C3DB-BF26BA2B1199"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EB6534F4-6B82-4D42-E344-9654BE3AEA65" name="CUENTA_REFERENCIA_DIVISA_FK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>78005ED2-FD51-11D4-DAEB-56E423B5A777</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="599319C8-D35C-B128-31DD-D70F91E84164"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

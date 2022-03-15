@@ -1,0 +1,176 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A469EC1A-1D29-062B-A4F2-5E9D00885BE5" name="CLIENTE">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:05:38 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="02935264-7477-906E-9549-2E6C1B001BE9">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:52:39 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDENTIFICACION" id="2BD4179D-616A-835F-C07A-07E87FD4C517">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:53:47 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TIPO_CLIENTE" id="F923AA8B-D649-0819-E311-288F915782D9">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:53:53 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ESTADO" id="33AFF629-A3F3-3605-2D27-50F73010B7D2">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:54:02 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA_ALTA" id="D802A81E-8466-3CA8-C7F8-06CD65F0531E">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:54:04 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA_BAJA" id="201EA29A-3088-E8F1-3264-8AA2AFA09636">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:54:08 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DIRECCION" id="21EC59EC-A714-F107-C356-F181D7C3B149">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:54:13 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CIUDAD" id="0C63CC9C-D716-71F1-A8EE-E4DC70C5677D">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:54:19 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CODIGO_POSTAL" id="C82A3761-B973-9AE3-05A0-F8168708B3B2">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:54:22 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PAIS" id="C38B4FF2-3FD4-F491-FA30-EDF1BEA6D680">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:54:22 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="73528B6D-5DC9-D0F6-4642-C3831DA776B2" name="CLIENTE PK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:54:43 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>02935264-7477-906E-9549-2E6C1B001BE9</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="7181AC8D-E4B9-4F1C-5C7B-D27A56DE5D83" name="Key_2">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:54:50 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="false"/>
+</engineerTo>
+<newElementsIDs>2BD4179D-616A-835F-C07A-07E87FD4C517</newElementsIDs>
+<usedAttributes>
+<attributeRef>2BD4179D-616A-835F-C07A-07E87FD4C517</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
