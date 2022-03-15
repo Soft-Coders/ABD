@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3CD857AD-4564-A335-F132-5ABF675E8AF6" containerWithKeyObject="30D59642-2CA3-E4AF-C085-53E5C4DF6E76" localFKIndex="6C5D9F5C-5E98-ED8D-1DB8-9D5ACEA3B0DD" name="SEGREGADA_CUENTA_REFERENCIA_FK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:25:10 UTC</createdTime>
+<generatorID>11240E9A-3A50-4980-0FE9-9D16C751CE4A</generatorID>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<referredTableLongName>CUENTA_REFERENCIA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C7CA03DE-5511-78D7-5999-45D152807EB1</referredTableID>
+<keyObject>05FF9D0B-3449-E4D5-3018-E50BC747CD23</keyObject>
+<referredKeyID>05FF9D0B-3449-E4D5-3018-E50BC747CD23</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CUENTA_CUENTA_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
