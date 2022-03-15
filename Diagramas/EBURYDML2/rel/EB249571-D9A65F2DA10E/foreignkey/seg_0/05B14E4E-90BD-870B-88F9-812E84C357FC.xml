@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="05B14E4E-90BD-870B-88F9-812E84C357FC" containerWithKeyObject="4FE2A94A-4299-E87D-A5C1-AEE27CF21A0B" localFKIndex="652399B6-4023-8AFB-5B50-81D2F34CE0E0" name="CUENTA_FINTECH_CUENTA_FK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>39295CF6-A88A-693A-0E93-A30601E00974</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<referredTableLongName>CUENTA</referredTableLongName>
+<arc>DEADEF4B-B31F-20B0-A1CD-B2912FF8B610</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D0D9B1FE-D04A-1565-6D76-ED8396C8C0C1</referredTableID>
+<keyObject>0A35D0F0-783D-F63D-54A5-29C0B566177D</keyObject>
+<referredKeyID>0A35D0F0-783D-F63D-54A5-29C0B566177D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CUENTA_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
