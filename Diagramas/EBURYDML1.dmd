@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="EBURYDML1" id="192368FD-1620-F62B-C869-E9CC9A34BEFC" version="3.5">
-<createdBy>Cestino</createdBy>
-<createdTime>2022-03-09 10:01:46 UTC</createdTime>
-<ownerDesignName>EBURYDML1</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>192368FD-1620-F62B-C869-E9CC9A34BEFC</designId>
-</OSDM_Design>
