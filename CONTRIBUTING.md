@@ -65,4 +65,4 @@ El procedimiento a seguir es el siguiente:
     2. Se resuelve de manera asícrona cuando sea posible.
   - Nada grave:
     1. Se notifica por el canal general de Discord o Whatsapp (opcional).
-    2. Se discute en el próximo SCRUM preferiblemente.
+    2. Se discute en el próximo Comeet preferiblemente.
