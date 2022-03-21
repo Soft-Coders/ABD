@@ -47,13 +47,13 @@ El procedimiento a seguir es el siguiente:
 	- Unificación de las actas (a realizar por el Comeeter).
 2. Resolución de Pull Requests pendientes.
 3. Lista de temas.
-	- Establecer las cuestiones a tratar en la reunión
-	- Debatir cada uno de los puntos de la lista de forma ordenada hasta solucionarlos
+	- Establecer las cuestiones a tratar en la reunión.
+	- Debatir cada uno de los puntos de la lista de forma ordenada hasta solucionarlos.
 4. Asignar tareas: establecer fecha y encargado.
 
 ### Resolución de conflictos entre Comeets
 - Solo altera mi trabajo:
-  - Se puede informar mediante Discord o Whatsapp
+  - Se puede informar mediante Discord o Whatsapp.
   - Lo resuelve la persona implicada de manera independiente.
 - Altera el trabajo de alguien más:
   - Muy grave:
