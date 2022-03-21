@@ -1,4 +1,10 @@
-# Metodología organizacional SoftSCRUM:
+# Metodología organizacional SCROM:
+> SCROM: Soft Coders Realistic Organisational Model
+
+<br>
+
+---
+## Github
 El workflow base es **gitflow**, modificando la rama "develop" por la rama "entrega-x".
 ![diagrama gitflow](./images/gitflow.png)
 
@@ -18,7 +24,7 @@ El workflow base es **gitflow**, modificando la rama "develop" por la rama "entr
 - Se requiere que **solo** los integrantes citados **en el comentario y título** revisen y acepten el *pull request* para realizar el *merge*.
   - `<member name> -> <Pull Request Name>` <br>
     `@member1 @member2 @member3 ...` <br>
-    
+
 ### Aprobación de Pull Requests
 - Síncrono:
   - Reunión de las personas implicadas para aprobar el pull request.
@@ -27,19 +33,22 @@ El workflow base es **gitflow**, modificando la rama "develop" por la rama "entr
   - Cuando la decisión no sea unánime se discute con el resto de implicados si se aprueba o no.
 
 ---
-## Sprints
-### Sprint Reviews
-1. Elección de Sprint master mediante sortea2.
-2. Revisión de tareas realizadas en pasado Sprint.
-    - Revisión de MAJOR Pull Requests y merged. 
-3. Especificación de tareas a realizar para próximo Sprint.
-4. Especificar orden de tareas (cuando necesario).
-5. Asignación de las tareas.
-6. Registro de tareas en GitHub projects.
-7. Registro de tareas en Discord channels.
-8. Creación de acta Sprint por Sprint master y unificación de actas SCRUM y Sprint del anterior Sprint.
+## Comeets
+> Las *coomets* son reuniones surgidas como resultado de unificar los workflows a seguir en sprint reviews y scrum meetings.
 
-### Resolución de conflictos Mid-Sprint
+El procedimiento a seguir es el siguiente:
+1. Actas.
+	- Exposición individual de respuestas a las dos preguntas básicas:
+		- ¿Qué has hecho hasta ahora?
+		- ¿Con qué problemas te has encontrado?
+	- Unificación de las actas (a realizar por el Comeeter).
+2. Resolución de Pull Requests pendientes.
+3. Lista de temas.
+	- Establecer las cuestiones a tratar en la reunión
+	- Debatir cada uno de los puntos de la lista de forma ordenada hasta solucionarlos
+4. Asignar tareas: establecer fecha y encargado.
+
+### Resolución de conflictos entre Comeets
 - Solo altera mi trabajo:
   - Se puede informar mediante Discord o Whatsapp
   - Lo resuelve la persona implicada de manera independiente.
@@ -54,12 +63,3 @@ El workflow base es **gitflow**, modificando la rama "develop" por la rama "entr
   - Nada grave:
     1. Se notifica por el canal general de Discord o Whatsapp (opcional).
     2. Se discute en el próximo SCRUM preferiblemente.
-
----
-### SCRUMs
-1. Realización individual de actas de SCRUM.
-2. Realización de SCRUM:
-    1. Elección de SCRUM master mediante sortea2.
-    2. Se exponen las respuestas individuales.
-    3. Discusión rápida para resolver conflictos.
-3. Unificación de actas individuales por SCRUM master
