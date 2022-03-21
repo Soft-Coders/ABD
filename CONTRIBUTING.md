@@ -6,6 +6,9 @@
 ---
 ## Github
 El workflow base es **gitflow**, modificando la rama "develop" por la rama "entrega-x".
+
+<br>
+
 ![diagrama gitflow](./images/gitflow.png)
 
 ---
