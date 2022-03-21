@@ -1,4 +1,4 @@
-# Metodología organizacional SCROM:
+# Metodología organizacional SCROM
 > SCROM: Soft Coders Realistic Organisational Model
 
 <br>
@@ -9,12 +9,12 @@ El workflow base es **gitflow**, modificando la rama "develop" por la rama "entr
 ![diagrama gitflow](./images/gitflow.png)
 
 ---
-## Pull Requests:
+## Pull Requests
 - Todo merge a *main* y *entrega-x* debe de hacerse mediante *pull request*.
 - En el caso de un PR para *main* deberá ser revisado y aprobado por *todo* el equipo.
 - Opcionalmente se pueden crear *pull requests* para *feature branches* que contengan *sub-features* en las que trabajen varias personas.
 
-### Nomenclatura:
+### Nomenclatura
 - Se requiere que **todos** los integrantes del grupo revisen y acepten el *pull request* para realizar el *merge*: <br>
   - `MAJOR -> <Pull Request Name>` <br>
     `@member1 @member2 @member3 ...` <br>
