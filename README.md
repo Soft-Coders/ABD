@@ -6,3 +6,8 @@
   SoftCoders
   <br>
 </h1>
+
+---
+## Licensing
+
+Licensed under the [MIT License](LICENSE).
