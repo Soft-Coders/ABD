@@ -6,6 +6,3 @@
   SoftCoders
   <br>
 </h1>
-
-
-
