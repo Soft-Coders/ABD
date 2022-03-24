@@ -49,3 +49,5 @@ El procedimiento a seguir es el siguiente:
 	
 	SoftCoders
 </h1>
+
+Licensed under the [MIT License](LICENSE).
