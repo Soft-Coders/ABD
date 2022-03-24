@@ -1,3 +1,4 @@
+
 <h1 align="left" >
  	<img src="images/logos/SC-transparent.png" width="27">
 	SoftCoders
@@ -5,10 +6,12 @@
 
 ## Metodología organizacional SCROM
 > **SCROM**: Soft Coders Realistic Organizational Model
+
 ### Distribución del trabajo
 > En este proyecto se han dividido los períodos de entregas en 2 subsecciones con objetivos diferentes para maximizar la eficiencia.
 - Master period: Subsección inicial del período de entrega. El objetivo es comprender todos los aspectos teóricos necesarios para realizar la entrega de forma satisfactoria.
 - Development period: Subsección final del período de entrega. El objetivo es centrar la atención y esfuerzos en desarrollar el producto requerido para la entrega.
+
 ### COMEETS
 > Las *COMEETS* son reuniones surgidas como resultado de unificar los workflows a seguir en sprint reviews y scrum meetings.
 El procedimiento a seguir es el siguiente:
@@ -22,6 +25,7 @@ El procedimiento a seguir es el siguiente:
 	- Establecer las cuestiones a tratar en la reunión.
 	- Debatir cada uno de los puntos de la lista de forma ordenada hasta solucionarlos.
 4. Asignar tareas: establecer fecha y encargado.
+
 #### Resolución de conflictos entre COMEETS
 - Solo altera mi trabajo:
   - Se puede informar mediante Discord o Whatsapp.
@@ -37,15 +41,8 @@ El procedimiento a seguir es el siguiente:
   - Nada grave:
     1. Se notifica por el canal general de Discord o Whatsapp (opcional).
     2. Se discute en el próximo COMEET preferiblemente.
----
-
-## License
-
-Licensed under the [MIT License](LICENSE).
 
 ---
-
-<br>
 
 <h1 align="center" >
  	<img src="images/logos/SC-transparent.png" width="300">
