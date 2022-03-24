@@ -18,7 +18,7 @@ El procedimiento a seguir es el siguiente:
 
 1. Pre-COMEET:
 	- Comeeter prepara la COMEET y revisa tareas en incubadora.
-	- El resto crea y sube sus actas personales a `ABD/docs/hoy/`.
+	- El resto crea y sube sus actas personales a `ABD/docs/hoy/`  en `branch: actas`.
 2. Intra-COMEET:
 	1. Actas.
 		- Exposición individual de respuestas a las dos preguntas básicas:
