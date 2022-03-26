@@ -14,17 +14,27 @@
 
 ### COMEETS
 > Las *COMEETS* son reuniones surgidas como resultado de unificar los workflows a seguir en sprint reviews y scrum meetings.
+> 	- Pre-COMEET: se refiere al día inmediatamente anterior al COMEET.
+> 	- Post-COMEET: denota todos los días después del COMEET hasta el día previo al siguiente.
 El procedimiento a seguir es el siguiente:
-1. Actas.
-	- Exposición individual de respuestas a las dos preguntas básicas:
-		- ¿Qué has hecho hasta ahora?
-		- ¿Con qué problemas te has encontrado?
-	- Unificación de las actas (a realizar por el Comeeter).
-2. Resolución de Pull Requests pendientes.
-3. Lista de temas.
-	- Establecer las cuestiones a tratar en la reunión.
-	- Debatir cada uno de los puntos de la lista de forma ordenada hasta solucionarlos.
-4. Asignar tareas: establecer fecha y encargado.
+
+1. Pre-COMEET:
+	- Comeeter prepara la COMEET y revisa tareas en incubadora.
+	- El resto crea y sube sus actas personales a `ABD/docs/hoy/`  en `branch: actas`.
+2. COMEET:
+	1. Actas.
+		- Exposición individual de respuestas a las dos preguntas básicas:
+			- ¿Qué has hecho hasta ahora?
+			- ¿Con qué problemas te has encontrado?
+		- Unificación de las actas (a realizar por el Comeeter).
+	2. Resolución de Pull Requests pendientes.
+	3. Lista de temas.
+		- Establecer las cuestiones a tratar en la reunión.
+		- Debatir cada uno de los puntos de la lista de forma ordenada hasta solucionarlos.
+	4. Asignar tareas: establecer fecha y encargado.
+3. Post-COMEET:
+	- Cada miembro realiza las tareas asignadas en el COMEET.
+	- Se añaden a la incubadora (tanto en GitHub como en Discord) todos los posibles temas a tratar en el futuro.
 
 #### Resolución de conflictos entre COMEETS
 - Solo altera mi trabajo:
