@@ -7,7 +7,7 @@
 
 ### CONDUCTA PARA LOS COMEETS Y NORMAS DE CONVIVENCIA<a name=1></a>
 
-Preámbulo: Los integrantes de este grupo se comprometen a cumplir la normativa estipulada en este documento.
+> Preámbulo: Los integrantes de este grupo se comprometen a cumplir la normativa estipulada en este documento.
 
 1. Los integrantes del grupo deberán en todo momento respetar el turno de palabra guiado por el Comeeter.
 2. Los integrantes del grupo se ajustarán en medida de lo posible a las pautas del Comeeter para cada Comeet.
