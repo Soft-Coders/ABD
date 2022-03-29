@@ -1,11 +1,11 @@
 # CODE OF CONDUCT SOFTCODERS
 
 ## INDICE
-- Conducta para los comeets y normas de convivencia
-- Pautas para la entrega de documentos y trabajos
+1. [Conducta para los comeets y normas de convivencia](#1)
+2. [Pautas para la entrega de documentos y trabajos](#2)
 
 
-### CONDUCTA PARA LOS COMEETS Y NORMAS DE CONVIVENCIA
+### CONDUCTA PARA LOS COMEETS Y NORMAS DE CONVIVENCIA<a name=1></a>
 
 - Preambulo: Los integrantes de este grupo se comprometen a cumplir la normativa estipulada en este documento.
 
@@ -17,7 +17,7 @@
 - 6. Si en algun momento algun integrante del grupo o varios no se sienten en disposicion de continuar la reunion, se debera comunicar al grupo y solventar la situacion lo antes posible de acuerdo a los dos anteriores puntos, a no ser que sea fuerza de causa mayor (Problemas de salud, problemas personales...).
 - 7. El grupo debera contribuir a la productividad del mismo.
 
-### PAUTAS PARA LA ENTREGA DE DOCUMENTOS Y TRABAJOS
+### PAUTAS PARA LA ENTREGA DE DOCUMENTOS Y TRABAJOS<a name=2></a>
 
 - 1. Los documentos solicitados antes de un comeet seran entregados en el periodo de tiempo estipulado.
 - 2. Seguir en medida de lo posible las plantillas y formatos definidos para cada documento.
