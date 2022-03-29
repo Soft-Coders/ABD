@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="41E416C6-7648-7E64-9CCB-B8E50C4D1EA4" name="DIVISA">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 10:06:14 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ABREVIATURA" id="71D0EC38-B53F-40E2-433F-65623F30CBDD">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 11:03:38 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOMBRE" id="7953E12B-B2BF-6047-FDD4-D74621AB5CF5">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 11:03:46 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SIMBOLO" id="2F351845-436B-5B7C-84E6-91D027BDFE16">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 11:03:48 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT010</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CAMBIO_EURO" id="F1417B4F-A562-FA3E-0208-45F4F5D5D150">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-09 11:03:52 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9ACD204D-4D7A-FA5A-BA93-1477EBE70087" name="DIVISA PK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:13:34 UTC</createdTime>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>71D0EC38-B53F-40E2-433F-65623F30CBDD</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

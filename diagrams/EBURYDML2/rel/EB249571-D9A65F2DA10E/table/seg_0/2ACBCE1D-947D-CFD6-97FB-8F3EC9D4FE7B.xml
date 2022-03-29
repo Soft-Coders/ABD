@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2ACBCE1D-947D-CFD6-97FB-8F3EC9D4FE7B" name="AUTORIZACION">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>9C13051C-4352-7D5A-CCDE-598CB5F58D38</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TIPO" id="6B72ED82-2760-329F-A38B-0AD8A109E453">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>3654CB20-BE0E-A492-2AE8-B43412801BDE</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PERSONA_AUTORIZADA_ID" id="B7C19B1E-2EBD-C1F5-6FA8-564CA82020AA">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>DE17E63A-97DE-DE74-FAC7-E7DB36952090</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D65C9960-15AB-9163-9790-4A107BFABA57" referredColumn="A112ADBC-427C-7876-E64F-AE09ED456AE0"/>
+</associations>
+</Column>
+<Column name="EMPRESA_ID" id="F809DDEC-439D-6F82-167B-E4EEDE67E398">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:25:10 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8C1D7CDB-F4C3-29C9-6A99-802F286A6B8D" referredColumn="50BB43D2-A237-2371-B54E-0B4201761560"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C71AF40A-6FF6-5C80-5B60-6E42608A2E27" name="AUTORIZACION_PK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>69AC1B4D-CF4A-1CB8-A88D-7415D3962F1A</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B7C19B1E-2EBD-C1F5-6FA8-564CA82020AA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2FD4E21B-D3B4-9F10-C8BA-15C7BD7DDDB4" name="AUTORIZACION_EMPRESA_FK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>E540FE2F-86C4-E6A1-816F-4A513ADBD5DA</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F809DDEC-439D-6F82-167B-E4EEDE67E398"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5A7388C2-BC98-4767-1BA4-4757C24FA49E" name="AUTORIZACION_PERSONA_AUTORIZADA_FK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>3B4C21DD-81FE-BC33-8672-8018935FBA28</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B7C19B1E-2EBD-C1F5-6FA8-564CA82020AA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
