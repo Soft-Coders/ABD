@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="51F091BD-2592-BAC5-FC97-156610556B93" name="DIVISA">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>41E416C6-7648-7E64-9CCB-B8E50C4D1EA4</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ABREVIATURA" id="EE369F81-2ACF-EDE1-44EA-C1CDC5E1C67E">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>71D0EC38-B53F-40E2-433F-65623F30CBDD</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="E780B7A5-AAC3-17F8-2BA2-DF3ECBEBF54F">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>7953E12B-B2BF-6047-FDD4-D74621AB5CF5</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SIMBOLO" id="F19DD314-50D3-92B1-A9CB-A27B1E9D202E">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>2F351845-436B-5B7C-84E6-91D027BDFE16</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT010</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CAMBIO_EURO" id="B98D953F-EF8B-4634-185C-85DF12E6C463">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>F1417B4F-A562-FA3E-0208-45F4F5D5D150</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="26ACB38B-3B94-412E-E719-7496A7783742" name="DIVISA_PK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>9ACD204D-4D7A-FA5A-BA93-1477EBE70087</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE369F81-2ACF-EDE1-44EA-C1CDC5E1C67E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

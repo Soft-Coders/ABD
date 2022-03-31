@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DC8BA433-AFBD-B16A-2B8D-94819311DC84" name="INDIVIDUAL">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>410543D7-317D-C82A-119F-5AFF206291B6</generatorID>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="1C830850-EF0D-8619-0049-82074DFE1716">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>02935264-7477-906E-9549-2E6C1B001BE9</generatorID>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DECC8EBD-5118-4CB3-86A7-B747BE85232A" referredColumn="9720EB1E-F5D6-2735-9087-3DDB9FD4F36A"/>
+</associations>
+</Column>
+<Column name="NOMBRE" id="C531424C-658D-2AAE-2690-03A07A14F57F">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>29CDB84D-7AC9-0CB3-8CF6-64706009325D</generatorID>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="APELLIDO" id="6BB40D0C-6E8C-24C8-515F-7F71C8790175">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>97B45C57-3442-5626-E010-044A5F8A3E0C</generatorID>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_NACIMIENTO" id="F777BA62-686A-863B-8B59-C22FED5EFBC3">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>3326ECFB-4728-4F39-1A80-8DFFE1B3A953</generatorID>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5BDFF74B-1A70-6B42-076F-6F6CF9F8AEE8" name="INDIVIDUAL_PK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>73528B6D-5DC9-D0F6-4642-C3831DA776B2</generatorID>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C830850-EF0D-8619-0049-82074DFE1716"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2D3DCB45-986B-85D1-E06D-9CFA06AB5D50" name="INDIVIDUAL_CLIENTE_FK">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-10 13:20:07 UTC</createdTime>
+<generatorID>C2F85753-3051-8D4F-1C21-15A34639E96A</generatorID>
+<ownerDesignName>EBURYDML1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C830850-EF0D-8619-0049-82074DFE1716"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

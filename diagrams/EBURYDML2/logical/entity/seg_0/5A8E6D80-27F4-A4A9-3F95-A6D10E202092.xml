@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5A8E6D80-27F4-A4A9-3F95-A6D10E202092" name="MOVIMIENTO">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-15 08:44:29 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="FECHA_OPERACION" id="A9D12F73-6862-7138-799A-D40BAB561ECE">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-15 08:44:38 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CONCEPTO" id="82C2D3EE-339E-5C46-4C5E-ACF48C08DC51">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-15 08:47:16 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="EMISOR" id="0782B2BB-6B4E-5C42-9E0D-1214B4EA8FAD">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-15 08:47:35 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TIPO_EMISOR" id="175FD97C-14FF-0D5C-A4CE-8D91663819B0">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-15 08:47:52 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CANTIDAD" id="53FE6BAD-8156-EA18-6998-9DA0003411B6">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-15 08:48:14 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DIVISA" id="D803B015-89EE-8474-4A9B-BCD04590ABAB">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-15 08:49:27 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MODO_OPERACION" id="534BD557-D83A-DD5A-8296-CCD620FDC3E9">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-15 08:49:48 UTC</createdTime>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NUMERO" id="25C68BA2-8D6F-E371-7E58-A6A65E8A3BE0">
+<createdBy>Cestino</createdBy>
+<createdTime>2022-03-15 10:48:08 UTC</createdTime>
+<generatorID>00325876-4C61-F1A7-CEB0-593EC5CCB15E</generatorID>
+<ownerDesignName>EBURYDML2</ownerDesignName>
+<engineerTo>
+<item key="EB249571-6F6F-A0F9-4D45-D9A65F2DA10E" value="true"/>
+</engineerTo>
+<referedAttribute>F41B5264-0EC7-7937-5957-A13071135A7C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>
