@@ -140,7 +140,7 @@ CREATE TABLE segregada (
 LOGGING;
 
 CREATE UNIQUE INDEX segregada__idx ON
-    segregada (
+    TS_INDICE (
         cuenta_ref_id
     ASC );
 
