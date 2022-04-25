@@ -83,7 +83,7 @@ LOGGING;
 CREATE TABLE divisa (
     abreviatura VARCHAR2(20) NOT NULL,
     nombre      VARCHAR2(20) NOT NULL,
-    simbolo     BLOB,
+    simbolo     NVARCHAR2(3),
     cambio_euro NUMBER NOT NULL
 )
 LOGGING;
