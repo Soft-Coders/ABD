@@ -83,7 +83,7 @@ LOGGING;
 CREATE TABLE divisa (
     abreviatura VARCHAR2(20) NOT NULL,
     nombre      VARCHAR2(20) NOT NULL,
-    simbolo     NVARCHAR2(3),
+    simbolo     BLOB,
     cambio_euro NUMBER NOT NULL
 )
 LOGGING;
@@ -140,7 +140,7 @@ CREATE TABLE segregada (
 LOGGING;
 
 CREATE UNIQUE INDEX segregada__idx ON
-    TS_INDICE (
+    segregada (
         cuenta_ref_id
     ASC );
 
