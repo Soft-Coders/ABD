@@ -16,7 +16,7 @@ BEGIN
     END IF;
 
     -- check de numero de cuentas, si tiene alguna cuenta fintech que haga referencia al cliente, saltara excepcion
-    SELECT COUNT(CLIENTE_FK) INTO CONT FROM CUENTA_FINTECH WHERE CLIENTE_FK LIKE CLIENTE_ID;
+    SELECT COUNT(CLIENTE_ID) INTO CONT FROM CUENTA_FINTECH WHERE CLIENTE_ID LIKE CLIENTE_ID;
     IF CONT > 0 THEN
         RAISE CUENTAS_ACTIVAS_EXCEPTION;
     END IF;
