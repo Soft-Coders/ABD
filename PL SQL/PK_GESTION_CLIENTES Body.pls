@@ -96,7 +96,7 @@ AUX              INTEGER
         		SET
             			IDENTIFICACION = P_IDENTIFICACION
         		WHERE
-            			CLIENTE_ID = P_ID_CLIENTE;
+            			ID = P_ID_CLIENTE;
 			END IF;
 		END IF;
 		IF P_TIPO_CLIENTE IS NOT NULL THEN
@@ -104,80 +104,80 @@ AUX              INTEGER
         		SET
             			TIPO_CLIENTE = P_TIPO_CLIENTE
         		WHERE
-            			CLIENTE_ID = P_ID_CLIENTE;
+            			ID = P_ID_CLIENTE;
 		END IF;
 		IF P_ESTADO IS NOT NULL THEN
 			UPDATE CLIENTE
         		SET
             			ESTADO = P_ESTADO
         		WHERE
-            			CLIENTE_ID = P_ID_CLIENTE;
+            			ID = P_ID_CLIENTE;
 		END IF;
 		IF P_FECHA_ALTA IS NOT NULL THEN
 			UPDATE CLIENTE
         		SET
             			FECHA_ALTA = P_FECHA_ALTA
         		WHERE
-            			CLIENTE_ID = P_ID_CLIENTE;
+            			ID = P_ID_CLIENTE;
 		END IF;
 		IF P_FECHA_BAJA IS NOT NULL THEN
 			UPDATE CLIENTE
         		SET
             			FECHA_BAJA = P_FECHA_BAJA
         		WHERE
-            			CLIENTE_ID = P_ID_CLIENTE;
+            			ID = P_ID_CLIENTE;
 		END IF;
 		IF P_DIRECCION IS NOT NULL THEN
 			UPDATE CLIENTE
         		SET
             			DIRECCION = P_DIRECCION
         		WHERE
-            			CLIENTE_ID = P_ID_CLIENTE;
+            			ID = P_ID_CLIENTE;
 		END IF;
 		IF P_CIUDAD IS NOT NULL THEN
 			UPDATE CLIENTE
         		SET
             			CIUDAD = P_CIUDAD
         		WHERE
-            			CLIENTE_ID = P_ID_CLIENTE;
+            			ID = P_ID_CLIENTE;
 		END IF;
 		IF P_CODIGO_POSTAL IS NOT NULL THEN
 			UPDATE CLIENTE
         		SET
             			CODIGO_POSTAL = P_CODIGO_POSTAL
         		WHERE
-            			CLIENTE_ID = P_ID_CLIENTE;
+            			ID = P_ID_CLIENTE;
 		END IF;
 		IF P_PAIS IS NOT NULL THEN
 			UPDATE CLIENTE
         		SET
             			PAIS = P_PAIS
         		WHERE
-            			CLIENTE_ID = P_ID_CLIENTE;
+            			ID = P_ID_CLIENTE;
 		END IF;
 		IF P_RAZON_SOCIAL IS NOT NULL THEN
-			UPDATE CLIENTE
+			UPDATE EMPRESA
         		SET
             			RAZON_SOCIAL = P_RAZON_SOCIAL
         		WHERE
             			CLIENTE_ID = P_ID_CLIENTE;
 		END IF;
 		IF P_NOMBRE IS NOT NULL THEN
-			UPDATE CLIENTE
+			UPDATE INDIVIDUAL
         		SET
             			NOMBRE = P_NOMBRE
         		WHERE
             			CLIENTE_ID = P_ID_CLIENTE;
 		END IF;
 		IF P_APELLIDOS IS NOT NULL THEN
-			UPDATE CLIENTE
+			UPDATE INDIVIDUAL
         		SET
             			APELLIDOS = P_APELLIDOS
         		WHERE
             			CLIENTE_ID = P_ID_CLIENTE;
 		END IF;
 		IF P_FECHA_NACIMIENTO IS NOT NULL THEN
-			UPDATE CLIENTE
+			UPDATE INDIVIDUAL
         		SET
             			FECHA_NACIMIENTO = P_FECHA_NACIMIENTO
         		WHERE
@@ -230,7 +230,7 @@ ID_AUX              PERSONA_AUTORIZADA.ID%TYPE IS
  			P_FECHA_FIN
  		);
  	END IF;
-	IF P_TIPO <> 'CONSULTA' AND P_TIPO <> 'OPERACIÓN' AND P_TIPO <> 'OPERACION' THEN
+	IF P_TIPO <> 'CONSULTA' AND P_TIPO <> 'OPERACI[ÓO]N' THEN
 		RAISE DATOS_INCORRECTOS_EXCEPTION;
 	ELSE
  		INSERT INTO AUTORIZACION (TIPO, PERSONA_AUTORIZADA_ID, EMPRESA_ID)
