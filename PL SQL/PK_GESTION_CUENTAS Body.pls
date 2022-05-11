@@ -31,7 +31,7 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
         ) VALUES (
             P_CUENTA_ID,
             P_IBAN,
-            p_SWIFT
+            P_SWIFT
         );
         
         INSERT INTO cuenta_fintech (
