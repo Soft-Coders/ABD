@@ -87,109 +87,58 @@ P_CIUDAD         IN CLIENTE.CIUDAD%TYPE,
 P_CODIGO_POSTAL  IN CLIENTE.CODIGO_POSTAL%TYPE,
 P_PAIS           IN CLIENTE.PAIS%TYPE,
 P_RAZON_SOCIAL IN EMPRESA.RAZON_SOCIAL%TYPE,
-P_NOMBRE           IN INDIVIDUAL.NOMBRE%TYPE, 
+P_NOMBRE            IN INDIVIDUAL.NOMBRE%TYPE, 
 P_APELLIDOS         IN INDIVIDUAL.APELLIDO%TYPE,
-P_FECHA_NACIMIENTO          IN INDIVIDUAL.FECHA_NACIMIENTO%TYPE) IS
-CLIENTE_AUX  CLIENTE.ID%TYPE;
-AUX              INTEGER;
+P_FECHA_NACIMIENTO        IN INDIVIDUAL.FECHA_NACIMIENTO%TYPE) IS
+CLIENTE_AUX         CLIENTE.ID%TYPE;
+IDENTIFICACION_AUX  CLIENTE.IDENTIFICACION%TYPE;
+AUX                 INTEGER;
   BEGIN
 	SELECT ID INTO CLIENTE_AUX FROM CLIENTE WHERE ID LIKE P_ID_CLIENTE;
     IF CLIENTE_AUX IS NULL THEN
 		RAISE CLIENTE_NO_EXISTENTE_EXCEPTION;
 	ELSE
-		IF P_IDENTIFICACION IS NOT NULL THEN
-			SELECT COUNT(CLIENTE.IDENTIFICACION) INTO AUX FROM CLIENTE WHERE IDENTIFICACION LIKE P_IDENTIFICACION;
-			IF AUX > 0 THEN
-				RAISE DATOS_INCORRECTOS_EXCEPTION;
-			ELSE
-				UPDATE CLIENTE
-        		SET
-            			IDENTIFICACION = P_IDENTIFICACION
-        		WHERE
-            			ID = P_ID_CLIENTE;
-			END IF;
-		END IF;
-		IF P_TIPO_CLIENTE IS NOT NULL THEN
+		-- La identificación solo se actualiza si no existe en la base de datos
+        -- En caso de que la identificación no se haya cambiado se mantendrá la misma y no se actualizará
+        -- En caso de que se quiera cambiar la identificación por una que ya tiene otro cliente se lanzará un ERROR
+        -- En caso de que la identificación se quiera cambiar por una que no tenga ningún cliente se actualizará el valor en la tabla
+        SELECT COUNT(CLIENTE.IDENTIFICACION) INTO AUX FROM CLIENTE WHERE IDENTIFICACION LIKE P_IDENTIFICACION;
+        SELECT IDENTIFICACION INTO IDENTIFICACION_AUX FROM CLIENTE WHERE ID LIKE P_ID_CLIENTE;
+		IF AUX == 0 THEN
 			UPDATE CLIENTE
-        		SET
-            			TIPO_CLIENTE = P_TIPO_CLIENTE
-        		WHERE
-            			ID = P_ID_CLIENTE;
+       		SET
+       			IDENTIFICACION = P_IDENTIFICACION
+        	WHERE
+    			ID = P_ID_CLIENTE;
+        ELSIF IDENTIFICACION_AUX <> P_IDENTIFICACION
+            RAISE DATOS_INCORRECTOS_EXCEPTION;
 		END IF;
-		IF P_ESTADO IS NOT NULL THEN
-			UPDATE CLIENTE
-        		SET
-            			ESTADO = P_ESTADO
-        		WHERE
-            			ID = P_ID_CLIENTE;
-		END IF;
-		IF P_FECHA_ALTA IS NOT NULL THEN
-			UPDATE CLIENTE
-        		SET
-            			FECHA_ALTA = P_FECHA_ALTA
-        		WHERE
-            			ID = P_ID_CLIENTE;
-		END IF;
-		IF P_FECHA_BAJA IS NOT NULL THEN
-			UPDATE CLIENTE
-        		SET
-            			FECHA_BAJA = P_FECHA_BAJA
-        		WHERE
-            			ID = P_ID_CLIENTE;
-		END IF;
-		IF P_DIRECCION IS NOT NULL THEN
-			UPDATE CLIENTE
-        		SET
-            			DIRECCION = P_DIRECCION
-        		WHERE
-            			ID = P_ID_CLIENTE;
-		END IF;
-		IF P_CIUDAD IS NOT NULL THEN
-			UPDATE CLIENTE
-        		SET
-            			CIUDAD = P_CIUDAD
-        		WHERE
-            			ID = P_ID_CLIENTE;
-		END IF;
-		IF P_CODIGO_POSTAL IS NOT NULL THEN
-			UPDATE CLIENTE
-        		SET
-            			CODIGO_POSTAL = P_CODIGO_POSTAL
-        		WHERE
-            			ID = P_ID_CLIENTE;
-		END IF;
-		IF P_PAIS IS NOT NULL THEN
-			UPDATE CLIENTE
-        		SET
-            			PAIS = P_PAIS
-        		WHERE
-            			ID = P_ID_CLIENTE;
-		END IF;
+        UPDATE CLIENTE
+            SET
+        		TIPO_CLIENTE = P_TIPO_CLIENTE
+                ESTADO = P_ESTADO
+                FECHA_ALTA = P_FECHA_ALTA
+                FECHA_BAJA = P_FECHA_BAJA
+                DIRECCION = P_DIRECCION
+                CIUDAD = P_CIUDAD
+                CODIGO_POSTAL = P_CODIGO_POSTAL
+                PAIS = P_PAIS
+        	WHERE
+        		ID = P_ID_CLIENTE;
+
+        -- Se comprueba si es empresa o individual
 		IF P_RAZON_SOCIAL IS NOT NULL THEN
 			UPDATE EMPRESA
         		SET
             			RAZON_SOCIAL = P_RAZON_SOCIAL
         		WHERE
             			CLIENTE_ID = P_ID_CLIENTE;
-		END IF;
-		IF P_NOMBRE IS NOT NULL THEN
+		ELSE
 			UPDATE INDIVIDUAL
         		SET
             			NOMBRE = P_NOMBRE
-        		WHERE
-            			CLIENTE_ID = P_ID_CLIENTE;
-		END IF;
-		IF P_APELLIDOS IS NOT NULL THEN
-			UPDATE INDIVIDUAL
-        		SET
-            			APELLIDO = P_APELLIDOS
-        		WHERE
-            			CLIENTE_ID = P_ID_CLIENTE;
-		END IF;
-		IF P_FECHA_NACIMIENTO IS NOT NULL THEN
-			UPDATE INDIVIDUAL
-        		SET
-            			FECHA_NACIMIENTO = P_FECHA_NACIMIENTO
+                        APELLIDO = P_APELLIDOS
+                        FECHA_NACIMIENTO = P_FECHA_NACIMIENTO
         		WHERE
             			CLIENTE_ID = P_ID_CLIENTE;
 		END IF;
