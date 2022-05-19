@@ -176,6 +176,27 @@ LOGGING;
 
 ALTER TABLE transaccion ADD CONSTRAINT transaccion_pk PRIMARY KEY ( id );
 
+CREATE TABLE movimientos (
+    numero              VARCHAR2(20) NOT NULL,
+    fecha               DATE NOT NULL,
+    cantidad            NUMBER(9,0),
+    estado              VARCHAR2(20) NOT NULL,
+    modo                VARCHAR2(20),
+    tipo_emisor         VARCHAR2(20)
+)
+
+ALTER TABLE movimientos ADD CONSTRAINT movimientos_pk PRIMARY KEY ( numero );
+
+ALTER TABLE movimientos
+    ADD CONSTRAINT tarjeta_fk FOREIGN KEY ( tarjeta_numero )
+        REFERENCES tarjeta ( numero )
+    NOT DEFERRABLE;
+
+ALTER TABLE movimientos
+    ADD CONSTRAINT emisor_fk FOREIGN KEY ( cliente_id )
+        REFERENCES cliente ( id )
+    NOT DEFERRABLE;
+
 ALTER TABLE autorizacion
     ADD CONSTRAINT autorizacion_empresa_fk FOREIGN KEY ( empresa_id )
         REFERENCES empresa ( cliente_id )
