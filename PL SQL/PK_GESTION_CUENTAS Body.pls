@@ -25,12 +25,14 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
             RAISE CUENTA_EXISTENTE_EXCEPTION;
         END IF;
         
+        P_CUENTA_ID := SQ_CUENTA.NEXTVAL;
+
         INSERT INTO cuenta (
             cuenta_id,
             iban,
             swift
         ) VALUES (
-            SQ_CUENTA.NEXTVAL,
+            P_CUENTA_ID,
             P_IBAN,
             P_SWIFT
         );
@@ -43,7 +45,7 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
             fecha_cierre,
             clasificacion
         ) VALUES (
-            SQ_CUENTA.CURRVAL,
+            P_CUENTA_ID,
             P_CLIENTE_ID,
             P_ESTADO,
             P_FECHA_APERTURA,
@@ -55,7 +57,7 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
             INSERT INTO pooled_account (
                 cuenta_fintech_id
             ) VALUES (
-                SQ_CUENTA.CURRVAL
+                P_CUENTA_ID
             );
         ELSE
             INSERT INTO segregada (
@@ -63,7 +65,7 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
                 comision,
                 cuenta_ref_id
             ) VALUES (
-                SQ_CUENTA.CURRVAL,
+                P_CUENTA_ID,
                 P_COMISION,
                 P_CUENTA_REF_ID
             );
@@ -103,7 +105,7 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
         
         UPDATE CUENTA_FINTECH
         SET
-            ESTADO = 'INACTIVA',
+            ESTADO = 'INACTIVO',
             FECHA_CIERRE = SYSDATE
         WHERE
             CUENTA_CUENTA_ID = P_CUENTA_ID;
