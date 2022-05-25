@@ -30,3 +30,10 @@
 
 - cantidad
 - comision
+
+## Tarjetas
+
+- numero
+- Nombre_titular
+- cvv
+- Fecha_cad
