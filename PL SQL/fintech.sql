@@ -74,7 +74,7 @@ CREATE TABLE cuenta_referencia (
     nombre_banco       VARCHAR2(20) NOT NULL,
     sucursal           VARCHAR2(20),
     pais               VARCHAR2(20),
-    saldo              NUMBER(12,0) NOT NULL,  -- Se considera como saldo máximo el patrimonio de Elon Musk
+    saldo              NUMBER(12,0) NOT NULL,  -- Se considera como saldo mÃ¡ximo el patrimonio de Elon Musk
     fecha_apertura     DATE,
     estado             VARCHAR2(20),
     divisa_abreviatura VARCHAR2(20) NOT NULL
@@ -84,7 +84,7 @@ LOGGING;
 ALTER TABLE cuenta_referencia ADD CONSTRAINT cuenta_referencia_pk PRIMARY KEY ( cuenta_cuenta_id );
 
 CREATE TABLE depositar_en (
-    saldo         NUMBER(12,0) NOT NULL,       -- Se considera como saldo máximo el patrimonio de Elon Musk
+    saldo         NUMBER(12,0) NOT NULL,       -- Se considera como saldo mÃ¡ximo el patrimonio de Elon Musk
     cuenta_ref_id NUMBER NOT NULL,
     pool_id       NUMBER NOT NULL
 )
@@ -172,10 +172,10 @@ ALTER TABLE tarjetas ADD CONSTRAINT tarjetas_pk PRIMARY KEY ( numero );
 CREATE TABLE transaccion (
     id                  VARCHAR2(20) NOT NULL,
     fecha_instruccion   DATE NOT NULL,
-    cantidad            NUMBER(9,0),          -- Transacción permite máximo 999.999.999
+    cantidad            NUMBER(9,0),          -- TransacciÃ³n permite mÃ¡ximo 999.999.999
     fecha_ejecucion     DATE,
     tipo                VARCHAR2(20) NOT NULL,
-    comision            NUMBER(8,0),          -- Máxima comisión contemplada es de 10% sobre 999.999.999 -> 99.999.999
+    comision            NUMBER(8,0),          -- MÃ¡xima comisiÃ³n contemplada es de 10% sobre 999.999.999 -> 99.999.999
     internacional       VARCHAR2(20),
     divisa_abreviatura2 VARCHAR2(20) NOT NULL,
     divisa_abreviatura  VARCHAR2(20) NOT NULL,  
@@ -183,6 +183,24 @@ CREATE TABLE transaccion (
     cuenta_cuenta_id1   NUMBER NOT NULL         
 )
 LOGGING;
+
+CREATE TABLE movimientos (
+    numero              VARCHAR2(20) NOT NULL,
+    numero_tarjeta      NUMBER(16,0) NOT NULL,
+    fecha               DATE NOT NULL,
+    cantidad            NUMBER(9,0),
+    estado              VARCHAR2(20) NOT NULL,
+    modo                VARCHAR2(20),
+    tipo_emisor         VARCHAR2(20)
+)
+LOGGING;
+
+ALTER TABLE movimientos ADD CONSTRAINT movimientos_pk PRIMARY KEY ( numero );
+
+ALTER TABLE movimientos
+    ADD CONSTRAINT tarjeta_fk FOREIGN KEY ( numero_tarjeta )
+        REFERENCES tarjeta ( numero )
+    NOT DEFERRABLE;
 
 ALTER TABLE transaccion ADD CONSTRAINT transaccion_pk PRIMARY KEY ( id );
 
