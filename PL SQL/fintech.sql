@@ -187,6 +187,7 @@ LOGGING;
 CREATE TABLE movimientos (
     numero              VARCHAR2(20) NOT NULL,
     numero_tarjeta      NUMBER(16,0) NOT NULL,
+    divisa              VARCHAR2(20) NOT NULL,   
     fecha               DATE NOT NULL,
     cantidad            NUMBER(9,0),
     estado              VARCHAR2(20) NOT NULL,
@@ -200,6 +201,14 @@ ALTER TABLE movimientos ADD CONSTRAINT movimientos_pk PRIMARY KEY ( numero );
 ALTER TABLE movimientos
     ADD CONSTRAINT tarjeta_fk FOREIGN KEY ( numero_tarjeta )
         REFERENCES tarjeta ( numero )
+    NOT DEFERRABLE;
+
+--Esta relación no tiene en cuenta la inflación en la cuenta, 
+--Aplicar el cambio del momento del movimiento de cada moneda a cada movimiento que se ejecutó en el pasado
+--para obtener un total real complicaría demasiado la lógica. Por ello no lo hemos tenido en cuenta
+ALTER TABLE movimientos
+    ADD CONSTRAINT divisa_fk FOREIGN KEY ( divisa )
+        REFERENCES divisa ( abreviatura )
     NOT DEFERRABLE;
 
 ALTER TABLE transaccion ADD CONSTRAINT transaccion_pk PRIMARY KEY ( id );
