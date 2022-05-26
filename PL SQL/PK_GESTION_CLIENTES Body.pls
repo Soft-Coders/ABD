@@ -1,3 +1,4 @@
+-- Commit debe de de realizarse fuera de los procedimientos (principio de responsabilidad)
 create or replace PACKAGE BODY PK_GESTION_CLIENTES AS
 
     PROCEDURE ALTA_CLIENTE(
@@ -26,7 +27,7 @@ create or replace PACKAGE BODY PK_GESTION_CLIENTES AS
             RAISE CLIENTE_EXISTENTE_EXCEPTION;
         END IF;
         
-        --Se aprovecha la variable para asignar el ID según la secuencia SQ_CLIENTE
+        --Se aprovecha la variable para asignar el ID segï¿½n la secuencia SQ_CLIENTE
         CLIENTE_ID := SQ_CLIENTE.NEXTVAL;
         
         --Insertamos el cliente
@@ -79,6 +80,8 @@ create or replace PACKAGE BODY PK_GESTION_CLIENTES AS
         ELSE
             RAISE CLIENTE_NO_VALIDO_EXCEPTION;
         END IF;
+
+        -- COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
                 ROLLBACK;
@@ -108,10 +111,10 @@ create or replace PACKAGE BODY PK_GESTION_CLIENTES AS
         IF CLIENTE_AUX IS NULL THEN
                 RAISE CLIENTE_NO_EXISTENTE_EXCEPTION;
         ELSE
-            -- La identificación solo se actualiza si no existe en la base de datos
-            -- En caso de que la identificación no se haya cambiado se mantendrá la misma y no se actualizará
-            -- En caso de que se quiera cambiar la identificación por una que ya tiene otro cliente se lanzará un ERROR
-            -- En caso de que la identificación se quiera cambiar por una que no tenga ningún cliente se actualizará el valor en la tabla
+            -- La identificaciï¿½n solo se actualiza si no existe en la base de datos
+            -- En caso de que la identificaciï¿½n no se haya cambiado se mantendrï¿½ la misma y no se actualizarï¿½
+            -- En caso de que se quiera cambiar la identificaciï¿½n por una que ya tiene otro cliente se lanzarï¿½ un ERROR
+            -- En caso de que la identificaciï¿½n se quiera cambiar por una que no tenga ningï¿½n cliente se actualizarï¿½ el valor en la tabla
             SELECT COUNT(CLIENTE.IDENTIFICACION) INTO AUX FROM CLIENTE WHERE IDENTIFICACION LIKE P_IDENTIFICACION;
             SELECT IDENTIFICACION INTO IDENTIFICACION_AUX FROM CLIENTE WHERE ID LIKE P_ID_CLIENTE;
             IF AUX = 0 THEN
@@ -154,6 +157,8 @@ create or replace PACKAGE BODY PK_GESTION_CLIENTES AS
                     CLIENTE_ID = P_ID_CLIENTE;
             END IF;
         END IF;
+        
+        -- COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
                 ROLLBACK;
@@ -295,6 +300,8 @@ create or replace PACKAGE BODY PK_GESTION_CLIENTES AS
             WHERE
                 IDENTIFICACION = P_IDENTIFICACION;
         END IF;
+
+        -- COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
                 ROLLBACK;
@@ -320,7 +327,7 @@ create or replace PACKAGE BODY PK_GESTION_CLIENTES AS
         SELECT ID INTO ID_AUX FROM PERSONA_AUTORIZADA WHERE ID LIKE P_ID_AUTORIZADO;
         IF ID_AUX IS NULL THEN
     
-            --Se aprovecha la variable para asignar el ID según la secuencia SQ_CLIENTE
+            --Se aprovecha la variable para asignar el ID segï¿½n la secuencia SQ_CLIENTE
             ID_AUX := SQ_CLIENTE.NEXTVAL;
             INSERT INTO PERSONA_AUTORIZADA (
                 ID,
@@ -344,7 +351,7 @@ create or replace PACKAGE BODY PK_GESTION_CLIENTES AS
                 P_FECHA_FIN
             );
         END IF;
-        IF P_TIPO <> 'CONSULTA' AND P_TIPO <> 'OPERACI[ÓO]N' THEN
+        IF P_TIPO <> 'CONSULTA' AND P_TIPO <> 'OPERACI[ï¿½O]N' THEN
             RAISE DATOS_INCORRECTOS_EXCEPTION;
         ELSE
             INSERT INTO AUTORIZACION (TIPO, PERSONA_AUTORIZADA_ID, EMPRESA_ID)
@@ -374,7 +381,7 @@ create or replace PACKAGE BODY PK_GESTION_CLIENTES AS
             RAISE PERSONA_AUTORIZADA_NO_EXISTENTE_EXCEPTION;
         END IF;
         --CHECK DE QUE LA EMPRESA EXISTE
-        SELECT ID INTO EMPRESA_ID_AUX FROM CLIENTE WHERE ID LIKE P_EMPRESA_ID FOR UPDATE; -- SE BLOQUEA FILA (NO SE PERMITE AÑADIR EMPRESAS CUANDO SE VA A DAR DE BAJA)
+        SELECT ID INTO EMPRESA_ID_AUX FROM CLIENTE WHERE ID LIKE P_EMPRESA_ID FOR UPDATE; -- SE BLOQUEA FILA (NO SE PERMITE Aï¿½ADIR EMPRESAS CUANDO SE VA A DAR DE BAJA)
         IF EMPRESA_ID_AUX IS NULL THEN 
             RAISE EMPRESA_NO_EXISTENTE_EXCEPTION;
         END IF;
@@ -383,7 +390,7 @@ create or replace PACKAGE BODY PK_GESTION_CLIENTES AS
             RAISE PERSONA_YA_BORRADA_EXCEPTION;
         END IF;
         -- CHECK DE LAS AUTORIZACIONES QUE TIENE LA PERSONA AUTORIZADA CON LA EMPRESA + BORRARLAS SI TIENE
-        SELECT PERSONA_AUTORIZADA_ID INTO CONT_AUT_EMP FROM AUTORIZACION WHERE PERSONA_AUTORIZADA_ID LIKE PERSONA_AUTORIZADA_ID_AUX FOR UPDATE; -- SE BLOQUEA FILA, NO AÑADIR AUOTIRIZACIONES DURANTE BAJA
+        SELECT PERSONA_AUTORIZADA_ID INTO CONT_AUT_EMP FROM AUTORIZACION WHERE PERSONA_AUTORIZADA_ID LIKE PERSONA_AUTORIZADA_ID_AUX FOR UPDATE; -- SE BLOQUEA FILA, NO Aï¿½ADIR AUOTIRIZACIONES DURANTE BAJA
         SELECT COUNT(PERSONA_AUTORIZADA_ID) INTO CONT_AUT_EMP FROM AUTORIZACION WHERE EMPRESA_ID LIKE EMPRESA_ID_AUX AND PERSONA_AUTORIZADA_ID LIKE PERSONA_AUTORIZADA_ID_AUX;
         IF CONT_AUT_EMP > 0 THEN 
             DELETE  FROM AUTORIZACION 
@@ -403,6 +410,8 @@ create or replace PACKAGE BODY PK_GESTION_CLIENTES AS
             WHERE
                 ID = PERSONA_AUTORIZADA_ID_AUX;
         END IF;
+
+        -- COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
                 ROLLBACK;
@@ -447,17 +456,19 @@ create or replace PACKAGE BODY PK_GESTION_CLIENTES AS
             UPDATE AUTORIZACION
             SET 
                 TIPO = P_TIPO,
-                -- Consideramos que la empresa no debería  
+                -- Consideramos que la empresa no deberï¿½a  
                 EMPRESA_ID = P_ID_EMPRESA
             WHERE 
                 PERSONA_AUTORIZADA_ID = P_ID_AUTORIZADO;
                 
+
+        -- COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
                 ROLLBACK;
                 RAISE;
         
-        --Quisimos hacerlo de esta manera pero creemos que nos puede complicar la lógica del proyecto en un futuro, por lo que hemos decidido apartarla
+        --Quisimos hacerlo de esta manera pero creemos que nos puede complicar la lï¿½gica del proyecto en un futuro, por lo que hemos decidido apartarla
         /*
         IF P_IDENTIFICACION IS NOT NULL THEN
             SELECT COUNT(IDENTIFICACION) INTO AUX FROM PERSONA_AUTORIZADA WHERE IDENTIFICACION LIKE P_IDENTIFICACION;

@@ -1,5 +1,5 @@
+-- Commit debe de de realizarse fuera de los procedimientos (principio de responsabilidad)
 create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
-    -- Commit debde de realizarse fuera del procedimeinto (principio de responsabilidad)
     PROCEDURE ABRIR_CUENTA(
     P_IBAN              IN CUENTA.IBAN%TYPE,
     P_SWIFT             IN CUENTA.SWIFT%TYPE,      
@@ -67,6 +67,8 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
                 P_CUENTA_REF_ID
             );
         END IF;
+
+        -- COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
                 ROLLBACK;
@@ -106,6 +108,8 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
             FECHA_CIERRE = SYSDATE
         WHERE
             CUENTA_CUENTA_ID = P_CUENTA_ID;
+
+        -- COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
                 ROLLBACK;
