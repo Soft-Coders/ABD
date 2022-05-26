@@ -11,7 +11,7 @@ BEGIN
 END;
 ```
 
-## Tests caso erróneos:
+## Tests casos erróneos:
 
 ```sql
 BEGIN
