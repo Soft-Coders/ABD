@@ -1,5 +1,5 @@
 create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
-    
+    -- Commit debde de realizarse fuera del procedimeinto (principio de responsabilidad)
     PROCEDURE ABRIR_CUENTA(
     P_IBAN              IN CUENTA.IBAN%TYPE,
     P_SWIFT             IN CUENTA.SWIFT%TYPE,      
@@ -12,27 +12,24 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
     P_CUENTA_REF_ID     IN SEGREGADA.CUENTA_REF_ID%TYPE)
     IS
     ESTADO_CLIENTE CUENTA_FINTECH.ESTADO%TYPE;
-    CUENTA_EXISTE CUENTA_FINTECH.CUENTA_CUENTA_ID%TYPE;
     P_CUENTA_ID CUENTA.CUENTA_ID%TYPE;
     BEGIN
         SELECT ESTADO INTO ESTADO_CLIENTE FROM CLIENTE WHERE ID LIKE P_CLIENTE_ID;
         SELECT CUENTA_ID INTO P_CUENTA_ID FROM CUENTA WHERE IBAN LIKE P_IBAN;
-        SELECT CUENTA_CUENTA_ID INTO CUENTA_EXISTE FROM CUENTA_FINTECH WHERE CUENTA_CUENTA_ID = P_CUENTA_ID;
-        IF ESTADO_CLIENTE NOT LIKE 'ACTIV[OAE]' THEN
+        
+        IF ESTADO_CLIENTE NOT LIKE 'ACTIVO' THEN
             RAISE CLIENTE_DE_BAJA_EXCEPTION;
         END IF;
-        IF CUENTA_EXISTE IS NOT NULL THEN
+        IF P_CUENTA_ID IS NOT NULL THEN
             RAISE CUENTA_EXISTENTE_EXCEPTION;
         END IF;
         
-        P_CUENTA_ID := SQ_CUENTA.NEXTVAL;
-
         INSERT INTO cuenta (
             cuenta_id,
             iban,
             swift
         ) VALUES (
-            P_CUENTA_ID,
+            SQ_CUENTA.NEXTVAL,
             P_IBAN,
             P_SWIFT
         );
@@ -45,7 +42,7 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
             fecha_cierre,
             clasificacion
         ) VALUES (
-            P_CUENTA_ID,
+            SQ_CUENTA.CURRVAL,
             P_CLIENTE_ID,
             P_ESTADO,
             P_FECHA_APERTURA,
@@ -57,7 +54,7 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
             INSERT INTO pooled_account (
                 cuenta_fintech_id
             ) VALUES (
-                P_CUENTA_ID
+                SQ_CUENTA.CURRVAL
             );
         ELSE
             INSERT INTO segregada (
@@ -65,16 +62,15 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
                 comision,
                 cuenta_ref_id
             ) VALUES (
-                P_CUENTA_ID,
+                SQ_CUENTA.CURRVAL,
                 P_COMISION,
                 P_CUENTA_REF_ID
             );
         END IF;
         EXCEPTION
-            WHEN CUENTA_EXISTENTE_EXCEPTION THEN
-                DBMS_OUTPUT.PUT_LINE('LA CUENTA QUE SE HA INTENTADO ABRIR YA EXISTE');
-            WHEN CLIENTE_DE_BAJA_EXCEPTION THEN
-                DBMS_OUTPUT.PUT_LINE('EL CLIENTE ASOCIADO A LA CUENTA NO ESTÁ ACTIVO');
+            WHEN OTHERS THEN
+                ROLLBACK;
+                RAISE;
     END;
     
     
@@ -88,13 +84,14 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
         SELECT CUENTA_ID INTO P_CUENTA_ID FROM CUENTA WHERE IBAN LIKE P_IBAN;
         SELECT CUENTA_REF_ID INTO REF_SEGREGADA FROM SEGREGADA WHERE CUENTA_FINTECH_ID = P_CUENTA_ID;
         IF REF_SEGREGADA IS NOT NULL THEN
-            SELECT SALDO INTO SALDO_MAYOR FROM CUENTA_REFERENCIA WHERE CUENTA_CUENTA_ID = REF_SEGREGADA;
+            SELECT SALDO INTO SALDO_MAYOR FROM CUENTA_REFERENCIA WHERE CUENTA_CUENTA_ID = REF_SEGREGADA FOR UPDATE; -- SE BLOQUEA FILA
             IF SALDO_MAYOR <> 0 THEN
                 RAISE SALDO_NO_VACIO_EXCEPTION;  
             END IF;
         ELSE
+            SELECT SALDO INTO SALDO_MAYOR FROM DEPOSITAR_EN WHERE POOL_ID = P_CUENTA_ID FOR UPDATE; --  SE BLOQUEA FILA, INTO NECESARIO PERO NO USAD
             SELECT MAX(SALDO) INTO SALDO_MAYOR FROM DEPOSITAR_EN WHERE POOL_ID = P_CUENTA_ID;
-            -- En caso de no cumplirse el predicado del WHERE la variables SALDO_MAYOR dever¿a ser nula
+            -- En caso de no cumplirse el predicado del WHERE la variables SALDO_MAYOR deberia ser nula
             IF SALDO_MAYOR IS NULL THEN
                 RAISE CUENTA_NO_EXISTE_EXCEPTION;
             END IF;
@@ -105,14 +102,13 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
         
         UPDATE CUENTA_FINTECH
         SET
-            ESTADO = 'INACTIVO',
+            ESTADO = 'INACTIVA',
             FECHA_CIERRE = SYSDATE
         WHERE
             CUENTA_CUENTA_ID = P_CUENTA_ID;
         EXCEPTION
-            WHEN CUENTA_NO_EXISTE_EXCEPTION THEN
-                DBMS_OUTPUT.PUT_LINE('LA CUENTA QUE SE HA INTENTADO CERRAR NO EXISTE');
-            WHEN SALDO_NO_VACIO_EXCEPTION THEN
-                DBMS_OUTPUT.PUT_LINE('EL SALDO DE LA CUENTA QUE SE HA INTENTADO CERRAR NO ESTÁ VACIO');
+            WHEN OTHERS THEN
+                ROLLBACK;
+                RAISE;
     END;
 END PK_GESTION_CUENTAS;
