@@ -1,3 +1,5 @@
+-- Creación del procedimiento P_COBRO
+
 -- Esta función comprueba si una cuenta referencia tiene asociada una segregada o no (entonces será una pooled)
 CREATE OR REPLACE FUNCTION f_comprueba_segregada (ref_id in cuenta_referencia.cuenta_cuenta_id%type)
     RETURN BOOLEAN IS
