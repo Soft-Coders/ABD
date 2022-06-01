@@ -3,17 +3,18 @@
 -- Esta función comprueba si una cuenta referencia tiene asociada una segregada o no (entonces será una pooled)
 CREATE OR REPLACE FUNCTION f_comprueba_segregada (ref_id in cuenta_referencia.cuenta_cuenta_id%type)
     RETURN BOOLEAN IS
-    es_segregada        BOOLEAN := false;
+    es_segregada BOOLEAN := false;
     segregada_asociada  segregada.cuenta_fintech_id%type;
-    SELECT seg.cuenta_fintech_id INTO segregada_asociada FROM segregada seg, cuenta_referencia cuenta_referencia
+    BEGIN
+    SELECT seg.cuenta_fintech_id INTO segregada_asociada FROM segregada seg, cuenta_referencia refe
         WHERE seg.cuenta_ref_id = refe.cuenta_cuenta_id  AND
             ref_id = refe.cuenta_cuenta_id;
 
     IF segregada_asociada IS NOT NULL 
     THEN
-        RETURN TRUE
+        RETURN TRUE;
     ELSE
-        RETURN FALSE 
+        RETURN FALSE;
     END IF;
 
 END f_comprueba_segregada;
@@ -77,22 +78,22 @@ BEGIN
                     JOIN CUENTA_FINTECH cf ON pc.cuenta_fintech_id = cf.cuenta_cuenta_id
                     JOIN CUENTA cuenta     ON cuenta.cuenta_id = cf.cuenta_cuenta_id
                     JOIN TARJETAS tar      ON tar.cuenta_fintech_id = cf.cuenta_cuenta_id
-                    JOIN MOVIMIENTO movi   ON movi.numero_tarjeta = tar.numero
-                        WHERE movi.estado = 'PENDIENTE' AND movi.modo = 'DÉBITO'
+                    JOIN MOVIMIENTOS movi   ON movi.numero_tarjeta = tar.numero
+                        WHERE movi.estado = 'PENDIENTE' AND movi.modo = 'DEBITO'
                     UNION
                     SELECT c FROM CUENTA_REFERENCIA c  --esta parte es por las cuentas segregadas
                     JOIN SEGREGADA seg     ON seg.cuenta_ref_id = c.cuenta_cuenta_id
                     JOIN CUENTA_FINTECH cf ON cf.cuenta_cuenta_id = seg.cuenta_fintech_id
                     JOIN CUENTA cuenta     ON cuenta.cuenta_id = cf.cuenta_cuenta_id
                     JOIN TARJETAS tar      ON tar.cuenta_fintech_id = cf.cuenta_cuenta_id
-                    JOIN MOVIMIENTO movi   ON movi.numero_tarjeta = tar.numero
-                        WHERE movi.estado = 'PENDIENTE' AND movi.modo = 'DÉBITO');
+                    JOIN MOVIMIENTOS movi   ON movi.numero_tarjeta = tar.numero
+                        WHERE movi.estado = 'PENDIENTE' AND movi.modo = 'DEBITO');
 
     UPDATE MOVIMIENTOS
         SET
             ESTADO = 'COBRADO'
         WHERE
-            ESTADO = 'PENDIENTE' AND MODO = 'DÉBITO';
+            ESTADO = 'PENDIENTE' AND MODO = 'DEBITO';
 
     -- COMMIT; 
     EXCEPTION
