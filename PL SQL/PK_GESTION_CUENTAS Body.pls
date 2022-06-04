@@ -105,7 +105,7 @@ create or replace PACKAGE BODY PK_GESTION_CUENTAS AS
         
         UPDATE CUENTA_FINTECH
         SET
-            ESTADO = 'INACTIVA',
+            ESTADO = 'INACTIVO',
             FECHA_CIERRE = SYSDATE
         WHERE
             CUENTA_CUENTA_ID = P_CUENTA_ID;
