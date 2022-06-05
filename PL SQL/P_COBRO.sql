@@ -18,7 +18,7 @@ CREATE OR REPLACE FUNCTION f_comprueba_segregada (ref_id in cuenta_referencia.cu
     END IF;
 
 END f_comprueba_segregada;
-/
+
 
 -- Esta función calcula el saldo que deberá tener la cuenta referencia después del cobro
 CREATE OR REPLACE FUNCTION f_saldo_referencia (ref_id in cuenta_referencia.cuenta_cuenta_id%type)
@@ -40,7 +40,7 @@ CREATE OR REPLACE FUNCTION f_saldo_referencia (ref_id in cuenta_referencia.cuent
                 RETURN saldo_aux - cantidad_aux;
 
             ELSE  -- el caso en que la cuenta es pooled
-                SELECT m.cantidad, c.saldo, pc.cuenta_fintech_id, depo.saldo INTO cantidad_aux, saldo_aux, pooled_aux, saldo_aux_depo
+                SELECT movi.cantidad, c.saldo, pc.cuenta_fintech_id, depo.saldo INTO cantidad_aux, saldo_aux, pooled_aux, saldo_aux_depo
                 FROM cuenta_referencia c, movimientos movi, depositar_en depo, pooled_account pc, cuenta_fintech cf, cuenta, tarjetas tar
                     WHERE c.cuenta_cuenta_id = ref_id  AND
                         c.cuenta_cuenta_id = depo.cuenta_ref_id AND
@@ -61,7 +61,7 @@ CREATE OR REPLACE FUNCTION f_saldo_referencia (ref_id in cuenta_referencia.cuent
 
             END IF;
 END f_saldo_referencia;
-/
+
 
 -- Este procedimiento resta las cantidades indicadas en los movimientos pendientes y de débito a sus 
 -- respectivas cuentas asociadas.
@@ -72,7 +72,8 @@ BEGIN
         SET 
             SALDO = f_saldo_referencia(cuenta_referencia.cuenta_cuenta_id)
         WHERE
-            EXISTS (SELECT c FROM CUENTA_REFERENCIA c  --esta parte es por las cuentas pooled
+            cuenta_cuenta_id
+            IN (SELECT c.cuenta_cuenta_id FROM CUENTA_REFERENCIA c  --esta parte es por las cuentas pooled
                     JOIN DEPOSITAR_EN depo ON c.cuenta_cuenta_id = depo.cuenta_ref_id
                     JOIN POOLED_ACCOUNT pc ON pc.cuenta_fintech_id = depo.pool_id
                     JOIN CUENTA_FINTECH cf ON pc.cuenta_fintech_id = cf.cuenta_cuenta_id
@@ -81,7 +82,7 @@ BEGIN
                     JOIN MOVIMIENTOS movi   ON movi.numero_tarjeta = tar.numero
                         WHERE movi.estado = 'PENDIENTE' AND movi.modo = 'DEBITO'
                     UNION
-                    SELECT c FROM CUENTA_REFERENCIA c  --esta parte es por las cuentas segregadas
+                SELECT c.cuenta_cuenta_id FROM CUENTA_REFERENCIA c  --esta parte es por las cuentas segregadas
                     JOIN SEGREGADA seg     ON seg.cuenta_ref_id = c.cuenta_cuenta_id
                     JOIN CUENTA_FINTECH cf ON cf.cuenta_cuenta_id = seg.cuenta_fintech_id
                     JOIN CUENTA cuenta     ON cuenta.cuenta_id = cf.cuenta_cuenta_id
@@ -101,8 +102,8 @@ BEGIN
             ROLLBACK;
             RAISE;
 END P_COBRO;
-/
+
 
 END;
-/
+
 
