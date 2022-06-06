@@ -4,7 +4,7 @@ BEGIN
    job_name           =>  'J_LIQUIDAR',
    job_type            => 'PLSQL_BLOCK',
    job_action         =>  'P_COBRO',
-   start_date         =>  '01-JUN-22 00.00.00 AM',
+   start_date         =>  TIMESTAMP '2022-06-01 00:00:00',
    end_date            => null,
    enabled             => TRUE,
    repeat_interval    =>  'FREQ=MONTHLY');
