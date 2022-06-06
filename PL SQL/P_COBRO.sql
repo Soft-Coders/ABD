@@ -18,7 +18,7 @@ CREATE OR REPLACE FUNCTION f_comprueba_segregada (ref_id in cuenta_referencia.cu
     END IF;
 
 END f_comprueba_segregada;
-
+/
 
 -- Esta función calcula el saldo que deberá tener la cuenta referencia después del cobro
 CREATE OR REPLACE FUNCTION f_saldo_referencia (ref_id in cuenta_referencia.cuenta_cuenta_id%type)
@@ -61,7 +61,7 @@ CREATE OR REPLACE FUNCTION f_saldo_referencia (ref_id in cuenta_referencia.cuent
 
             END IF;
 END f_saldo_referencia;
-
+/
 
 -- Este procedimiento resta las cantidades indicadas en los movimientos pendientes y de débito a sus 
 -- respectivas cuentas asociadas.
@@ -102,8 +102,7 @@ BEGIN
             ROLLBACK;
             RAISE;
 END P_COBRO;
+/
 
-
-END;
 
 
