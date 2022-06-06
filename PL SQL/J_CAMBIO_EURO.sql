@@ -6,13 +6,15 @@ BEGIN
         SET 
             DIVISA.CAMBIO_EURO = V_COTIZACIONES.CAMBIOEURO
         WHERE
-            DIVISA.ABREVIATURA = V_COTIZACIONES.ABREVIATURA
+            DIVISA.ABREVIATURA = V_COTIZACIONES.ABREVIATURA;
+            
     EXCEPTION
         WHEN OTHERS THEN
             ROLLBACK;
             RAISE;
 END P_CAMBIOEURO;
 
+begin
 DBMS_SCHEDULER.CREATE_JOB(
     job_name            => 'J_CAMBIO_EURO',
     job_type            => 'PLSQL_BLOCK',
@@ -22,5 +24,5 @@ DBMS_SCHEDULER.CREATE_JOB(
     end_date            => null,
     enabled             => TRUE,
     comments            => 'Actualiza el atributo cambio euro de la tabla divisa tomando el valor de la vista v_cotizaciones cada día a las 00:05'
-)
-
+);
+end;
